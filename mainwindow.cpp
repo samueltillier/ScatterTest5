@@ -15,21 +15,21 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::makePlot() {
-    // generate some data:
-    QVector<double> x(101), y(101); // initialize with entries 0..100
-    for (int i=0; i<101; ++i)
-    {
-      x[i] = i/50.0 - 1; // x goes from -1 to 1
-      y[i] = x[i]*x[i]; // let's plot a quadratic function
+    QVector<double> x(101), y(101); //101 = the amount of data points
+    for (int i=0; i<100; i++) {
+        x[i] = i; //set x-values
+        y[i] = i; //set y-values
     }
-    // create graph and assign data to it:
+
     ui->customPlot->addGraph();
-    ui->customPlot->graph(0)->setData(x, y);
-    // give the axes some labels:
-    ui->customPlot->xAxis->setLabel("x");
+    ui->customPlot->graph(0)->setData(x,y);
+    ui->customPlot->graph(0)->setLineStyle(QCPGraph::lsNone); //lsNone = no line
+    ui->customPlot->graph(0)->setScatterStyle(QCPScatterStyle::ssStar); //ssStar = star points
+
+    ui->customPlot->xAxis->setLabel("x"); //axis labels
     ui->customPlot->yAxis->setLabel("y");
-    // set axes ranges, so we see all data:
-    ui->customPlot->xAxis->setRange(-1, 1);
-    ui->customPlot->yAxis->setRange(0, 1);
-    ui->customPlot->replot();
+
+    ui->customPlot->xAxis->setRange(0,100); //axis ranges
+    ui->customPlot->yAxis->setRange(0,100);
 }
+//comment
