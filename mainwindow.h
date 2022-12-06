@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "SecondWindow.h"
+#include "filedata.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,8 +19,21 @@ public:
     ~MainWindow();
 
 private slots:
-    void makePlot();
+    void on_pushButton_clicked();
+    std::string upload();
+    void close();
+
 private:
     Ui::MainWindow *ui;
+
+    SecondWindow *Pointersecondwindow;
+
+    //QString userText;//User text input
+    std::string filename;//std::string of user input
+    std::vector<double> x;
+    std::vector<double> y;
+
+    FileData inputData;
+    bool readBoolean;
 };
 #endif // MAINWINDOW_H
