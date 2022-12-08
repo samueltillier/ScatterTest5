@@ -65,3 +65,4 @@ void SecondWindow::makePlot() {
 }
 
 //C:\Users\leona\OneDrive\Bureau\ScatterTest5\recData.csv
+// nhTransparent 	Enumerator NaN data points appear transparent.
