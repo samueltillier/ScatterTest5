@@ -10,7 +10,6 @@ SecondWindow::SecondWindow(QWidget *parent) :
     ui(new Ui::SecondWindow)
 {
     ui->setupUi(this);
-    SecondWindow::makePlot();
 
 }
 
@@ -21,16 +20,8 @@ SecondWindow::~SecondWindow()
 
 void SecondWindow::makePlot() {
 
-    QVector<double> xx(101), yy(101); //101 = the amount of data points
-    for (int i=0; i<100; i++) {
-        xx[i] = i; //set x-values
-        yy[i] = i; //set y-values
-    }
-
-    //qDebug() << QString::number(this->x.isEmpty());
-
     ui->customPlot->addGraph();
-    ui->customPlot->graph(0)->setData(xx,yy);
+    ui->customPlot->graph(0)->setData(this->getX(),this->getY());
     ui->customPlot->graph(0)->setLineStyle(QCPGraph::lsNone); //lsNone = no line
     ui->customPlot->graph(0)->setScatterStyle(QCPScatterStyle::ssStar); //ssStar = star points
 
@@ -39,6 +30,8 @@ void SecondWindow::makePlot() {
 
     ui->customPlot->xAxis->setRange(0,10); //axis ranges
     ui->customPlot->yAxis->setRange(0,10);
+
+    ui->customPlot->replot();
 }
 
 //C:\Users\leona\OneDrive\Bureau\ScatterTest5\recData.csv

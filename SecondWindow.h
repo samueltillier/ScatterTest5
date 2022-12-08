@@ -1,6 +1,7 @@
 #ifndef SECONDWINDOW_H
 #define SECONDWINDOW_H
 
+#include "qdebug.h"
 #include <QMainWindow>
 #include <QVector>
 
@@ -17,11 +18,23 @@ public:
     explicit SecondWindow(QWidget *parent = nullptr);
     ~SecondWindow();
 
-    void setX(QVector<double> givenX) {x = givenX;};
-    void setY(QVector<double> givenY) {y = givenY;};
+    void makePlot();
 
-    QVector<double> getX() {return x;};
-    QVector<double> getY() {return y;};
+
+    void setX(const QVector<double>& givenX) {
+
+        //qDebug() << "setX()" << QString::number(givenX.size());//
+        x = givenX;
+        //qDebug() << "size of x" << QString::number(x.size());//
+
+
+    };
+    void setY(const QVector<double>& givenY) {y = givenY;};
+
+    const QVector<double>& getX() {
+        //qDebug() << "size of x in the getX() fucntion" << QString::number(x.size());
+        return x;};
+    const QVector<double>& getY() {return y;};
 
 
 
@@ -29,7 +42,6 @@ public:
 private:
     Ui::SecondWindow *ui;
 
-    void makePlot();
     QVector<double> x;
     QVector<double> y;
 

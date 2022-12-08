@@ -36,7 +36,9 @@ void MainWindow::close(){
     Pointersecondwindow->setX(inputData.getX());
     Pointersecondwindow->setY(inputData.getY());
 
+    Pointersecondwindow->makePlot();
     Pointersecondwindow->show();
+
     this->hide();
 }
 
@@ -54,4 +56,6 @@ void MainWindow::on_pushButton_clicked()
     }
 
     close();
+
+
 }

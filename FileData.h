@@ -11,8 +11,8 @@ class FileData
 public:
     FileData();
 
-    QVector<double> getX() {return xCoordinates;};
-    QVector<double> getY() {return yCoordinates;};
+    const QVector<double>& getX() {return xCoordinates;};
+    const QVector<double>& getY() {return yCoordinates;};
 
     bool readData(std::string fileName);
 
