@@ -1,6 +1,7 @@
 #ifndef SECONDWINDOW_H
 #define SECONDWINDOW_H
 
+#include "ui_SecondWindow.h"
 #include <QMainWindow>
 #include <QVector>
 
@@ -22,8 +23,6 @@ public:
 
     QVector<double> getX() {return x;};
     QVector<double> getY() {return y;};
-
-
 
 
 private:

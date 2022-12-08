@@ -17,14 +17,14 @@ SOURCES += \
     \
 
 HEADERS += \
+    SecondWindow.h \
     filedata.h \
     mainwindow.h \
-    qcustomplot.h \
-    SecondWindow.h
+    qcustomplot.h
 
 FORMS += \
-    mainwindow.ui \
-    SecondWindow.ui
+    SecondWindow.ui \
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
