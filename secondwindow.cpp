@@ -41,7 +41,7 @@ void SecondWindow::makePlot() {
     ui->customPlot->xAxis->setRange(0,10); //axis ranges
     ui->customPlot->yAxis->setRange(0,10);*/
 
-    /*Adrian: This code works.******************************************************************************************************************
+   // This code works.******************************************************************************************************************
 
     QCPColorMap *colorMap = new QCPColorMap(ui->customPlot->xAxis, ui->customPlot->yAxis);
     QCPColorGradient *gradient = new QCPColorGradient();
@@ -63,11 +63,11 @@ void SecondWindow::makePlot() {
       colorMap->rescaleDataRange(true);
       colorMap->setInterpolate(false);
       ui->customPlot->rescaleAxes();
-      ui->customPlot->replot(); Adrian */
+      ui->customPlot->replot();
 
 //***********************************************************************************************************************************************
 
-// Adrian : Here I tried to plot a heat map
+/* Adrian : Here I tried to plot a heat map
     // configure axis rect:
     ui->customPlot->setInteractions(QCP::iRangeDrag|QCP::iRangeZoom); // this will also allow rescaling the color scale by dragging/zooming
     ui->customPlot->axisRect()->setupFullAxesBox(true);
@@ -103,7 +103,7 @@ void SecondWindow::makePlot() {
     colorMap->rescaleDataRange();
 
     // rescale the key (x) and value (y) axes so the whole color map is visible:
-    ui->customPlot->rescaleAxes();
+    ui->customPlot->rescaleAxes(); */
 
 //************************************************************************************************************************************************
 }
